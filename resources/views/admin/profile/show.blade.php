@@ -68,8 +68,8 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex flex-column align-items-center text-center">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin"
-                                    class="rounded-circle p-1 bg-primary" width="110">
+                                <img src="{{ !empty($userData->profile_image)? url('img/user/'.$userData->profile_image): url('img/user/no_image.jpg') }}" alt="Admin"
+                                    class=" rounded-circle avatar-xl" width="110">
                                 <div class="mt-3">
                                     <h4>{{ $userData->name }}</h4>
                                     <p class="text-secondary mb-1">{{ $userData->username }}</p>
@@ -142,52 +142,61 @@
                 <div class="col-lg-8">
                     <div class="card">
                         <div class="card-body">
-                            <div class="row mb-3">
-                                <div class="col-sm-3">
-                                    <h6 class="mb-0">Nama Lengkap</h6>
+                            <!-- end row -->
+                            <form method="post" action="{{ route('update.profile') }}"  enctype="multipart/form-data">
+                                @csrf
+                                <div class="row mb-3">
+                                    <label for="name" class="col-sm-3 col-form-label">Nama Lengkap</label>
+                                    <div class="col-sm-9">
+                                        <input class="form-control" type="text" value="{{ $userData->name }}" id="name" name="name">
+                                    </div>
                                 </div>
-                                <div class="col-sm-9 text-secondary">
-                                    <input type="text" class="form-control" value="{{ $userData->name }}">
+                                <!-- end row -->
+                                <div class="row mb-3">
+                                    <label for="email" class="col-sm-3 col-form-label">Email</label>
+                                    <div class="col-sm-9">
+                                        <input class="form-control" type="email" value="{{ $userData->email }}" id="email" name="email">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-sm-3">
-                                    <h6 class="mb-0">Email</h6>
+                                <!-- end row -->
+                                <div class="row mb-3">
+                                    <label for="username" class="col-sm-3 col-form-label">Username</label>
+                                    <div class="col-sm-9">
+                                        <input class="form-control" type="text" value="{{ $userData->username }}" id="username" name="username">
+                                    </div>
                                 </div>
-                                <div class="col-sm-9 text-secondary">
-                                    <input type="email" class="form-control" value="{{ $userData->email }}">
+                                <!-- end row -->
+                                <div class="row mb-3">
+                                    <label for="phone" class="col-sm-3 col-form-label">No. HP</label>
+                                    <div class="col-sm-9">
+                                        <input class="form-control" type="text" value="{{ $userData->phone }}" id="phone" name="phone">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-sm-3">
-                                    <h6 class="mb-0">Username</h6>
+                                <!-- end row -->
+                                <div class="row mb-3">
+                                    <label for="phone" class="col-sm-3 col-form-label">Profile Picture</label>
+                                    <div class="col-sm-9">
+                                        <input class="form-control" type="file" id="profile_picture" name="profile_picture">
+                                    </div>
                                 </div>
-                                <div class="col-sm-9 text-secondary">
-                                    <input type="text" class="form-control" value="{{ $userData->username }}">
+                                <!-- end row -->
+                                <div class="row mb-3">
+                                    <label for="phone" class="col-sm-3 col-form-label"></label>
+                                    <div class="col-sm-9">
+                                        <img src="{{ !empty($userData->profile_image)? url('img/user/'.$userData->profile_image): url('img/user/no_image.jpg') }}" alt="Admin"
+                                        class="rounded avatar-lg" id="avatar" name="avatar" width="110">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-sm-3">
-                                    <h6 class="mb-0">No. HP</h6>
+                            <!-- end row -->
+                                <div class="row">
+                                    <div class="col-sm-3"></div>
+                                    <div class="col-sm-9 text-secondary">
+                                        {{-- <a href="{{ route('edit.profile') }}" class="btn btn-primary px-4">Edit Profile</a> --}}
+                                        <input type="submit" class="btn btn-primary px-4" value="Update Profile">
+                                    </div>
                                 </div>
-                                <div class="col-sm-9 text-secondary">
-                                    <input type="text" class="form-control" value="{{ $userData->phone }}">
-                                </div>
-                            </div>
-                            {{-- <div class="row mb-3">
-                                <div class="col-sm-3">
-                                    <h6 class="mb-0">Address</h6>
-                                </div>
-                                <div class="col-sm-9 text-secondary">
-                                    <input type="text" class="form-control" value="Bay Area, San Francisco, CA">
-                                </div>
-                            </div> --}}
-                            <div class="row">
-                                <div class="col-sm-3"></div>
-                                <div class="col-sm-9 text-secondary">
-                                    <input type="button" class="btn btn-primary px-4" value="Update">
-                                </div>
-                            </div>
+                            </form>
+
                         </div>
                     </div>
                     {{-- <div class="row">
@@ -228,5 +237,103 @@
             </div>
         </div>
     </div>
-
 @endsection
+
+@push('javascript')
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#profile_picture').change(function(e){
+            var reader = new FileReader();
+            reader.onload = function(e){
+                $('#avatar').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(e.target.files['0']);
+        });
+    });
+</script>
+@endpush
+
+
+{{-- <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">Textual inputs</h4>
+                <p class="card-title-desc">Here are examples of <code class="highlighter-rouge">.form-control</code> applied to each
+                    textual HTML5 <code class="highlighter-rouge">&lt;input&gt;</code> <code class="highlighter-rouge">type</code>.</p>
+                <div class="row mb-3">
+                    <label for="example-text-input" class="col-sm-2 col-form-label">Text</label>
+                    <div class="col-sm-9">
+                        <input class="form-control" type="text" placeholder="Artisanal kale"value="{{ $userData->name }}" id="example-text-input">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="example-password-input" class="col-sm-2 col-form-label">Password</label>
+                    <div class="col-sm-9">
+                        <input class="form-control" type="password" value="hunter2"value="{{ $userData->name }}" id="example-password-input">
+                    </div>
+                </div>
+                <!-- end row -->
+                <div class="row mb-3">
+                    <label for="example-number-input" class="col-sm-2 col-form-label">Number</label>
+                    <div class="col-sm-9">
+                        <input class="form-control" type="number" value="42"value="{{ $userData->name }}" id="example-number-input">
+                    </div>
+                </div>
+                <!-- end row -->
+                <div class="row mb-3">
+                    <label for="example-datetime-local-input" class="col-sm-2 col-form-label">Date and time</label>
+                    <div class="col-sm-9">
+                        <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00"value="{{ $userData->name }}" id="example-datetime-local-input">
+                    </div>
+                </div>
+                <!-- end row -->
+                <div class="row mb-3">
+                    <label for="example-date-input" class="col-sm-2 col-form-label">Date</label>
+                    <div class="col-sm-9">
+                        <input class="form-control" type="date" value="2011-08-19"value="{{ $userData->name }}" id="example-date-input">
+                    </div>
+                </div>
+                <!-- end row -->
+                <div class="row mb-3">
+                    <label for="example-month-input" class="col-sm-2 col-form-label">Month</label>
+                    <div class="col-sm-9">
+                        <input class="form-control" type="month" value="2020-03"value="{{ $userData->name }}" id="example-month-input">
+                    </div>
+                </div>
+                <!-- end row -->
+                <div class="row mb-3">
+                    <label for="example-week-input" class="col-sm-2 col-form-label">Week</label>
+                    <div class="col-sm-9">
+                        <input class="form-control" type="week" value="2020-W14"value="{{ $userData->name }}" id="example-week-input">
+                    </div>
+                </div>
+                <!-- end row -->
+                <div class="row mb-3">
+                    <label for="example-time-input" class="col-sm-2 col-form-label">Time</label>
+                    <div class="col-sm-9">
+                        <input class="form-control" type="time" value="13:45:00"value="{{ $userData->name }}" id="example-time-input">
+                    </div>
+                </div>
+                <!-- end row -->
+                <div class="row mb-3">
+                    <label for="example-color-input" class="col-sm-2 col-form-label">Color</label>
+                    <div class="col-sm-9">
+                        <input type="color" class="form-control form-control-color w-100"value="{{ $userData->name }}" id="example-color-input" value="#0f9cf3" title="Choose your color">
+                    </div>
+                </div>
+                <!-- end row -->
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label">Select</label>
+                    <div class="col-sm-9">
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected="">Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            </select>
+                    </div>
+                </div>
+                <!-- end row -->
+            </div>
+        </div> --}}
