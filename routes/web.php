@@ -26,6 +26,7 @@ Route::get('/dashboard', function () {
 Route::controller(AdminController::class)->group(function(){
     Route::get('/admin/logout','destroy')->name('admin.logout');
     Route::get('/admin/profile','admin_profile_index')->name('admin.profile');
+    Route::get('/admin/profile/show','admin_profile_show')->name('admin.profile.show');
 });
 
 Route::middleware('auth')->group(function () {
