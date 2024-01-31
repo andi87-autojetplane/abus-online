@@ -49,7 +49,7 @@
 
                                 <div class="form-group mb-3 row">
                                     <div class="col-12">
-                                        <input class="form-control" id="login" name="login" type="text" required="" placeholder="Username/Email/No. HP">
+                                        <input class="form-control" id="login" name="login" type="text" required="" placeholder="Username/Email/No. HP" value="{{ old('login') }}">
                                         @if ($errors->has('login'))
                                             @foreach ($errors->get('login') as $error)
                                                 <span>{{ $error }}</span>
@@ -60,7 +60,7 @@
 
                                 <div class="form-group mb-3 row">
                                     <div class="col-12">
-                                        <input class="form-control" id="password" name="password" type="password" required="" placeholder="Password">
+                                        <input class="form-control" id="password" name="password" type="password" required="" placeholder="Password" value="{{ old('password') }}">
                                         @if ($errors->has('password'))
                                             @foreach ($errors->get('password') as $error)
                                                 <span>{{ $error }}</span>

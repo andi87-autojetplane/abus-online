@@ -1,10 +1,4 @@
 @extends('admin.admin_master')
-@push('css')
-
-
-
-@endpush
-
 @section('main')
 <div class="page-content">
     <div class="container-fluid">

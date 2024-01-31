@@ -1,3 +1,8 @@
+@php
+    $id = Auth::user()->id;
+    $userData = App\Models\User::find($id);
+@endphp
+
 <header id="page-topbar">
     <div class="navbar-header">
         <div class="d-flex">
@@ -143,8 +148,7 @@
                     <!-- item-->
                     <a class="dropdown-item" href="{{ route('admin.profile.show') }}"><i class="ri-user-line align-middle me-1"></i>
                         Profile</a>
-                    <a class="dropdown-item" href="#"><i class="ri-wallet-2-line align-middle me-1"></i> My
-                        Wallet</a>
+                    <a class="dropdown-item" href="{{ route('welcome') }}"><i class="ri-wallet-2-line align-middle me-1"></i>Front end</a>
                     <a class="dropdown-item d-block" href="#"><span
                             class="badge bg-success float-end mt-1">11</span><i
                             class="ri-settings-2-line align-middle me-1"></i> Settings</a>

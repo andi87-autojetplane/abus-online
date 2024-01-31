@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -46,13 +47,6 @@ class AdminController extends Controller
         return view('admin.profile.show', compact('userData'));
     }
 
-    public function admin_profile_edit()
-    {
-        $id = Auth::user()->id;
-        $userData = User::find($id);
-        return view('admin.profile.edit', compact('userData'));
-    }
-
     public function admin_profile_update(Request $request)
     {
         $id = Auth::user()->id;
@@ -73,6 +67,29 @@ class AdminController extends Controller
         $data->save();
 
         return redirect()->route('admin.profile.show');
+    }
+
+    public function admin_profile_change_password(Request $request)
+    {
+        $request->validate([
+            'old_password' => 'required',
+            'new_password' => 'required',
+            'password_confirmation' => 'required|same:new_password',
+        ]);
+
+        $hashedPassword = Auth::user()->password;
+
+        if (Hash::check($request->old_password,$hashedPassword)){
+            $users = User::find(Auth::id());
+            $users->password = bcrypt($request->new_password);
+            $users->save();
+
+            session()->flash('message','Password berhasil dirubah.');
+            return redirect()->back();
+        } else {
+            session()->flash('message','Password lama tidak sama.');
+            return redirect()->back();
+        }
     }
 
 }

@@ -39,11 +39,11 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-layout-3-line"></i>
-                        <span>Layouts</span>
+                        <span>Frontend</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li>
-                            <a href="javascript: void(0);" class="has-arrow">Vertical</a>
+                            <a href="javascript: void(0);" class="has-arrow">Blog</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li><a href="{{ asset('backend/layouts-dark-sidebar.html') }}">Dark Sidebar</a></li>
                                 <li><a href="{{ asset('backend/layouts-compact-sidebar.htm') }}l">Compact Sidebar</a></li>
@@ -55,9 +55,9 @@
                         </li>
 
                         <li>
-                            <a href="javascript: void(0);" class="has-arrow">Horizontal</a>
+                            <a href="javascript: void(0);" class="has-arrow">Layout</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="{{ asset('backend/layouts-horizontal.html') }}">Horizontal</a></li>
+                                <li><a href="{{ route('frontend.hero')}}">Hero</a></li>
                                 <li><a href="{{ asset('backend/layouts-hori-topbar-light.html') }}">Topbar light</a></li>
                                 <li><a href="{{ asset('backend/layouts-hori-boxed-width.html') }}">Boxed width</a></li>
                                 <li><a href="{{ asset('backend/layouts-hori-preloader.html') }}">Preloader</a></li>
