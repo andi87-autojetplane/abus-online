@@ -10,4 +10,14 @@ class FrontendController extends Controller
         return view('frontend.components.hero_view');
     }
 
+    public function frontend_contact()
+    {
+        return view('frontend.contact');
+    }
+
+    public function frontend_about()
+    {
+        return view('frontend.about');
+    }
+
 }

@@ -20,6 +20,8 @@ Route::get('/', function () {
     return view('frontend.index');
 })->name('welcome');
 
+
+
 Route::get('/dashboard', function () {
     return view('admin.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -36,7 +38,8 @@ Route::controller(AdminController::class)->group(function(){
 
 Route::controller(FrontendController::class)->group(function(){
     Route::get('/frontend/hero','hero_create')->name('frontend.hero');
-
+    Route::get('/contact','frontend_contact')->name('kontak');
+    Route::get('/profil-puskesmas','frontend_about')->name('profil-puskesmas');
 });
 
 Route::middleware('auth')->group(function () {

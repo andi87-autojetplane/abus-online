@@ -6,7 +6,7 @@
         <div class="carousel-inner" role="listbox">
 
             <!-- Slide 1 -->
-            <div class="carousel-item active" style="background-image: url({{ asset('frontend/assets/img/slide/bg1.png') }})">
+            <div class="carousel-item active" style="background-image: url({{ asset('frontend/assets/img/slide/slide.png') }})">
                 <div class="container">
                     <h2>Selamat Datang di<span class=""> UPT Puskesmas Sukamulya </span></h2>
                     <p>"Melayani dengan Penuh Keikhlasan"</p>
@@ -15,14 +15,6 @@
 
             <!-- Slide 2 -->
             <div class="carousel-item" style="background-image: url({{ asset('frontend/assets/img/slide/bg1.png') }})">
-                <div class="container">
-                    <h2>Maklumat Pelayanan</h2>
-                    <p>"Dengan ini kami menyatakan sanggup memberikan pelayanan yang sesuai dengan standar pelayanan yang telah ditetapkan dan apabila tidak menepati janji ini, Kami siap menerima sanksi sesuai peraturan perundang-undangan yang berlaku"</p>
-                </div>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="carousel-item" style="background-image: url({{ asset('frontend/assets/img/slide/bg2.png') }})">
                 <div class="container">
                     <h2>VISI</h2>
                     <p>”Garut yang Bertaqwa, Maju dan Sejahtera”</p>
