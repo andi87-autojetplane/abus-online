@@ -5,7 +5,21 @@
 
         <div class="carousel-inner" role="listbox">
 
-            <!-- Slide 1 -->
+            @php
+                $heros = App\Models\Hero::select('id', 'title','description','hero_image')->orderBy('id', 'desc')->get();
+            @endphp
+
+            @foreach ($heros as $hero )
+            <div class="carousel-item active" style="background-image: url({{ asset('frontend/assets/img/slide/'.$hero->hero_image) }})">
+                <div class="container">
+                    <h2>{!! $hero->title !!}</h2>
+                    {{-- {!! $name !!} --}}
+                    {!! $hero->description !!}
+                </div>
+            </div>
+            @endforeach
+
+            {{-- <!-- Slide 1 -->
             <div class="carousel-item active" style="background-image: url({{ asset('frontend/assets/img/slide/slide.png') }})">
                 <div class="container">
                     <h2>Selamat Datang di<span class=""> UPT Puskesmas Sukamulya </span></h2>
@@ -32,7 +46,7 @@
                         <li>Meningkatkan kemandirian ekonomi masyarakat berbasis potensi lokal dan industri pertanian serta pariwisata yang berdaya saing disertai pengelolaan sumber daya alam secara berkelanjutan.</li>
                     </ol>
                 </div>
-            </div>
+            </div> --}}
 
         </div>
 

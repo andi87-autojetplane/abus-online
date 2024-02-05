@@ -145,7 +145,7 @@
                                         <td>{{ $user->username}}</td>
                                         <td>{{ $user->phone }}</td>
                                         <td>
-                                            @if ($user->is_active === 1)
+                                            @if ($user->is_active == 1)
                                                 <span class="text-success">Aktif</span>
                                             @else
                                                 <span class="text-danger">Tidak Aktif</span>

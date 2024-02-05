@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Frontend\HeroController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -32,12 +33,14 @@ Route::controller(AdminController::class)->group(function(){
     Route::get('/admin/profile/show','admin_profile_show')->name('admin.profile.show');
     Route::post('/admin/profile/update','admin_profile_update')->name('update.profile');
     Route::post('/admin/profile/changepassword','admin_profile_change_password')->name('change.password');
-    Route::post('/frontend/hero','admin_profile_change_password')->name('frontend.hero');
+});
 
+Route::controller(HeroController::class)->group(function(){
+    Route::get('/frontend/Hero','index')->name('hero');
+    Route::post('/frontend/hero/post','storeHero')->name('post-hero');
 });
 
 Route::controller(FrontendController::class)->group(function(){
-    Route::get('/frontend/hero','hero_create')->name('frontend.hero');
     Route::get('/contact','frontend_contact')->name('kontak');
     Route::get('/profil-puskesmas','frontend_about')->name('profil-puskesmas');
 });

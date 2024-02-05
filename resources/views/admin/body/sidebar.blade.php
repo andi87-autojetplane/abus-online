@@ -57,7 +57,7 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Layout</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="{{ route('frontend.hero')}}">Hero</a></li>
+                                <li><a href="{{ route('hero')}}">Hero</a></li>
                                 <li><a href="{{ asset('backend/layouts-hori-topbar-light.html') }}">Topbar light</a></li>
                                 <li><a href="{{ asset('backend/layouts-hori-boxed-width.html') }}">Boxed width</a></li>
                                 <li><a href="{{ asset('backend/layouts-hori-preloader.html') }}">Preloader</a></li>
