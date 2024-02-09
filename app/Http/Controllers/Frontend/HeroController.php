@@ -55,4 +55,52 @@ class HeroController extends Controller
             return redirect()->back()->with($notification);
         }
     }
+
+    public function hero_edit(Hero $heroid)
+    {
+        $hero_id = $heroid->id;
+        $herofind = Hero::find($hero_id);
+        return view('frontend.hero.edit',compact('herofind'));
+    }
+
+    public function hero_update(Request $request)
+    {
+        $HeroId = $request->id;
+
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'slide-picture' => 'required',
+        ]);
+
+        if ($request->file('slide-picture')) {
+            $file = $request->file('slide-picture');
+            $filename = hexdec(uniqid()) . '.' . $file->getClientOriginalExtension();
+            Image::make($file)->resize(1920, 1152)->save('frontend/assets/img/slide/' . $filename);
+            Hero::findOrFail($HeroId)->update([
+                'title' => $request->title,
+                'description' => $request->description,
+                'hero_image' => $filename,
+            ]);
+
+            $notification = array(
+                'message' => 'Hero berhasil dibuat dengan gambar',
+                'alert-type' => 'success',
+            );
+
+            return redirect()->back()->with($notification);
+        } else {
+            Hero::findOrFail($HeroId)->update([
+                'title' => $request->title,
+                'description' => $request->description,
+            ]);
+
+            $notification = array(
+                'message' => 'Hero berhasil dibuat tanpa gambar',
+                'alert-type' => 'success',
+            );
+
+            return redirect()->back()->with($notification);
+        }
+    }
 }

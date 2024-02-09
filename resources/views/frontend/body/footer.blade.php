@@ -16,7 +16,7 @@
                         <div class="social-links mt-3">
                             <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
                             <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                            <a href="https://www.instagram.com/pkm_sukamulyagarut/" class="instagram"><i class="bx bxl-instagram"></i></a>
                             <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
                             <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
                         </div>
@@ -26,10 +26,10 @@
                 <div class="col-lg-2 col-md-6 footer-links">
                     <h4>Daftar Link</h4>
                     <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="https://kemkes.go.id/">Kemenkes</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="https://diskes.jabarprov.go.id/">Dinkes Provinsi Jabar</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="https://dinkes.garutkab.go.id/">Dinkes Kab. Garut</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="https://www.garutkab.go.id/">Garut Kab</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
                     </ul>
                 </div>
@@ -57,7 +57,7 @@
 
     <div class="container">
         <div class="copyright">
-            &copy; Copyright <strong><span>Puskesmas Sukamulya</span></strong>. All Rights Reserved
+            <script>document.write(new Date().getFullYear())</script> &copy; Copyright <strong><span>Puskesmas Sukamulya</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
             Designed by <a href="https://bootstrapmade.com/">Autojetplane</a>

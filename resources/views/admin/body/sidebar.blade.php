@@ -58,7 +58,7 @@
                             <a href="javascript: void(0);" class="has-arrow">Layout</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li><a href="{{ route('hero')}}">Hero</a></li>
-                                <li><a href="{{ asset('backend/layouts-hori-topbar-light.html') }}">Topbar light</a></li>
+                                <li><a href="{{ asset('backend/layouts-hori-topbar-light.html') }}">Pelayanan</a></li>
                                 <li><a href="{{ asset('backend/layouts-hori-boxed-width.html') }}">Boxed width</a></li>
                                 <li><a href="{{ asset('backend/layouts-hori-preloader.html') }}">Preloader</a></li>
                                 <li><a href="{{ asset('backend/layouts-hori-colored-header.html') }}">Colored Header</a></li>
@@ -66,6 +66,8 @@
                         </li>
                     </ul>
                 </li>
+
+
 
                 <li class="menu-title">Pages</li>
 
@@ -94,6 +96,48 @@
                         <li><a href="{{ asset('backend/pages-invoice.html') }}">Invoice</a></li>
                         <li><a href="{{ asset('backend/pages-404.html') }}">Error 404</a></li>
                         <li><a href="{{ asset('backend/pages-500.html') }}">Error 500</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-title">Data Master</li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-layout-3-line"></i>
+                        <span>Data Master</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">Wilayah</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li><a href="{{ asset('backend/layouts-dark-sidebar.html') }}">Negara</a></li>
+                                <li><a href="{{ asset('backend/layouts-compact-sidebar.htm') }}l">Provinsi</a></li>
+                                <li><a href="{{ asset('backend/layouts-icon-sidebar.html') }}">Kabupaten/kota</a></li>
+                                <li><a href="{{ asset('backend/layouts-boxed.html') }}">Kecamatan</a></li>
+                                <li><a href="{{ asset('backend/layouts-preloader.html') }}">Desa/Kelurahan</a></li>
+                                <li><a href="{{ asset('backend/layouts-colored-sidebar.html') }}">Alamat</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">Pendidikan</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li><a href="{{ route('hero')}}">Jenjang</a></li>
+                                <li><a href="{{ asset('backend/layouts-hori-topbar-light.html') }}">Institusi</a></li>
+                                <li><a href="{{ asset('backend/layouts-hori-boxed-width.html') }}">Jurusan</a></li>
+                                <li><a href="{{ asset('backend/layouts-hori-preloader.html') }}">Preloader</a></li>
+                                <li><a href="{{ asset('backend/layouts-hori-colored-header.html') }}">Colored Header</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">Kepegawaian</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li><a href="{{ route('hero')}}">Jenjang</a></li>
+                                <li><a href="{{ asset('backend/layouts-hori-topbar-light.html') }}">Pelayanan</a></li>
+                                <li><a href="{{ asset('backend/layouts-hori-boxed-width.html') }}">Boxed width</a></li>
+                                <li><a href="{{ asset('backend/layouts-hori-preloader.html') }}">Preloader</a></li>
+                                <li><a href="{{ asset('backend/layouts-hori-colored-header.html') }}">Colored Header</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
             </ul>

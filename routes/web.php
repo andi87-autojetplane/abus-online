@@ -36,8 +36,10 @@ Route::controller(AdminController::class)->group(function(){
 });
 
 Route::controller(HeroController::class)->group(function(){
-    Route::get('/frontend/Hero','index')->name('hero');
+    Route::get('/frontend/hero','index')->name('hero');
     Route::post('/frontend/hero/post','storeHero')->name('post-hero');
+    Route::get('/frontend/hero/{heroid}/edit','hero_edit')->name('hero.edit');
+    Route::post('/frontend/hero/update','hero_update')->name('hero.update');
 });
 
 Route::controller(FrontendController::class)->group(function(){

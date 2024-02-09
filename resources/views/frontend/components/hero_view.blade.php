@@ -94,9 +94,8 @@
                                         <td><img src="{{ asset('frontend/assets/img/slide/'.$hero->hero_image) }}" width="320px" height="192px"></td>
                                         <td>{{ $hero->created_at }}</td>
                                         <td>
-                                                <button type="button" class="btn btn-warning btn-sm waves-effect waves-light">Edit</button>
-                                                <button type="button" class="btn btn-danger btn-sm waves-effect waves-light">Delete</button>
-                                                <button type="button" class="btn btn-primary btn-sm waves-effect waves-light">Banned</button>
+                                                <a href="{{ route('hero.edit',['heroid'=>$hero->id]) }}" class="btn btn-warning btn-sm waves-effect waves-light">Edit</a>
+                                                <a class="btn btn-danger btn-sm waves-effect waves-light">Delete</a>
                                         </td>
                                     </tr>
                                     @endforeach

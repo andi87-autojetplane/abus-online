@@ -42,25 +42,30 @@
                                     class="bi bi-chevron-right"></i></a>
                             <ul>
                                 <li><a href="#">Promosi Kesehatan</a></li>
-                                <li><a href="#">UKS dan PKPR</a></li>
-                                <li><a href="#">UKGS</a></li>
-                                <li><a href="#">Kesehatan Ibu</a></li>
-                                <li><a href="#">Kesehatan Anak</a></li>
                                 <li><a href="#">Kesehatan Lingkungan</a></li>
-                                <li><a href="#">UKS dan PKPR</a></li>
-                                <li><a href="#">Deep Drop Down 3</a></li>
+                                <li class="dropdown"><a href="#"><span>Kesehatan Keluarga</span> <i class="bi bi-chevron-right"></i></a>
+                                    <ul>
+                                        <li><a href="#">Promosi Kesehatan</a></li>
+                                        <li><a href="#">UKS dan PKPR</a></li>
+                                        <li><a href="#">UKGS</a></li>
+                                        <li><a href="#">Kesehatan Ibu</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="#"><span>Pencegahan dan Pengendalian Penyakit</span> <i class="bi bi-chevron-right"></i></a>
+                                    <ul>
+                                        <li><a href="#">Promosi Kesehatan</a></li>
+                                        <li><a href="#">UKS dan PKPR</a></li>
+                                        <li><a href="#">UKGS</a></li>
+                                        <li><a href="#">Kesehatan Ibu</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Pelayanan Gizi</a></li>
+
+                                <li><a href="#">Perkesmas</a></li>
+                                <li><a href="#">TB</a></li>
                                 <li><a href="#">Deep Drop Down 4</a></li>
                                 <li><a href="#">Deep Drop Down 5</a></li>
                                 <li><a href="#">Promosi Kesehatan</a></li>
-                                <li><a href="#">UKS dan PKPR</a></li>
-                                <li><a href="#">Deep Drop Down 3</a></li>
-                                <li><a href="#">Deep Drop Down 4</a></li>
-                                <li><a href="#">Deep Drop Down 5</a></li>
-                                <li><a href="#">Promosi Kesehatan</a></li>
-                                <li><a href="#">UKS dan PKPR</a></li>
-                                <li><a href="#">Deep Drop Down 3</a></li>
-                                <li><a href="#">Deep Drop Down 4</a></li>
-                                <li><a href="#">Deep Drop Down 5</a></li>
                             </ul>
                         </li>
                         <li class="dropdown"><a href="#"><span>UKM Pengembangan</span> <i
@@ -75,9 +80,15 @@
                 </li>
                     </ul>
                 </li>
+                <li class="dropdown"><a href="#"><span>Tentang Kami</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="{{ route('profil-puskesmas') }}">Profil Puskesmas</a></li>
+                        <li><a href="#">Visi dan Misi</a></li>
+                        <li><a href="#">SDM</a></li>
+                        <li><a href="{{ route('kontak') }}">Kontak Kami</a></li>
+                    </ul>
+                </li>
                 <li><a class="nav-link scrollto" href="#services">Artikel</a></li>
-                <li><a class="nav-link scrollto" href="{{ route('profil-puskesmas') }}">Profil</a></li>
-                <li><a class="nav-link scrollto" href="{{ route('kontak') }}">Kontak</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
